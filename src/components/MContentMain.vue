@@ -1,9 +1,9 @@
 
 <template>
-  <div class="mContentMain" :style="{'height': height + 'px'}">
+  <div class="mContentMain">
     <header>h</header>
-    <default-comp class="left" :title='fff' :height="230"></default-comp>
-    <default-comp class="right" :title="item" :height="230"></default-comp>
+    <default-comp class="left" title="LIVE CHART" :height="370"></default-comp>
+    <default-comp class="right" title="SPECTRA" :height="370"></default-comp>
   </div>
 </template>
 
@@ -32,12 +32,11 @@ export default {
   display: grid;
   grid-template-columns: 60% 40%;
   grid-template-rows: repeat(2, 50%);
-  border: 1px solid blue;
+  grid-gap: 12px
 }
 header {
   grid-column: 1 / 3;
   grid-row: 1/2;
-  height: 250px;
 }
 .left {
   grid-column: 1 / 2;
