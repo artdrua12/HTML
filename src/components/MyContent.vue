@@ -2,9 +2,8 @@
 <template>
   <div class="mycontent">
     <header class="left">
-  
-        <i class="material-icons">reorder</i>
-    
+      <i class="material-icons">reorder</i>
+
       <md-menu>
         <md-button md-menu-trigger>instruments
           <md-icon>keyboard_arrow_down</md-icon>
@@ -22,13 +21,13 @@
     </header>
 
     <header class="right">
-      <md-menu>
+      <md-menu class="border">
         <md-button md-menu-trigger>
           <md-icon>account_circle</md-icon>Alexander
         </md-button>
       </md-menu>
 
-      <md-menu>
+      <md-menu class="border">
         <md-button md-menu-trigger>Eng
           <md-icon>keyboard_arrow_down</md-icon>
         </md-button>
@@ -39,7 +38,7 @@
         </md-menu-content>
       </md-menu>
 
-      <i class="material-icons color">lock_open</i>
+      <i class="material-icons color border">lock_open</i>
     </header>
 
     <section>section</section>
@@ -48,13 +47,15 @@
 </template>
 
 <script>
+import DefaultComp from "./DefaultComp.vue";
 export default {
   data() {
     return {
-      instruments: "",
-      lang: "",
       text: ["Widgets", "View", "Administration"]
     };
+  },
+  components: {
+    DefaultComp
   }
 };
 </script>
@@ -63,16 +64,19 @@ export default {
 .mycontent {
   display: grid;
   grid-template-columns: repeat(2, 1fr) 270px;
-  grid-template-rows: 45px 1fr;
+  grid-template-rows: 47px 1fr;
 }
-i.color {
-  color: rgb(39, 187, 187);
-  margin: 0px 15px 0px 0px;
+.border{
+  border-left: 1px solid gray
 }
 .md-menu {
   display: flex;
   flex: 0 1 120px;
   justify-content: center;
+}
+i.color {
+  color: rgb(11, 207, 207);
+  padding:  0px 5px 0px 7px;
 }
 i.md-icon {
   margin: -3px 0px 0px -2px;
@@ -90,7 +94,6 @@ header.right {
 header {
   display: flex;
   background-color: rgb(255, 255, 255);
-  padding: 0px 2px 0px 0px;
   align-items: center;
   overflow: hidden;
 }

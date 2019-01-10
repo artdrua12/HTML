@@ -99,7 +99,7 @@ div.mysidebar {
 }
 header,
 footer {
-  padding: 12px 20px 10px 27px;
+  padding: 10px 20px 9px 27px;
   font-size: 1.5rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
