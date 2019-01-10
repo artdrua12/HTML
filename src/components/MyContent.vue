@@ -2,49 +2,48 @@
 <template>
   <div class="mycontent">
     <header class="left">
+  
+        <i class="material-icons">reorder</i>
+    
+      <md-menu>
+        <md-button md-menu-trigger>instruments
+          <md-icon>keyboard_arrow_down</md-icon>
+        </md-button>
+        <md-menu-content>
+          <md-menu-item>My Item 1</md-menu-item>
+          <md-menu-item>My Item 2</md-menu-item>
+          <md-menu-item>My Item 3</md-menu-item>
+        </md-menu-content>
+      </md-menu>
 
-      <div class="ïtem">
-        <i class="material-icons first">reorder</i>
-      </div>
-
-      <div class="ïtem">
-        <md-field>
-          <md-select
-            v-model="instruments"
-            name="instruments"
-            id="instruments"
-            placeholder="Instruments"
-          >
-            <md-option value="instruments_one">Instruments_one</md-option>
-            <md-option value="instruments_two">Instruments_two</md-option>
-            <md-option value="instruments_three">Instruments_three</md-option>
-          </md-select>
-        </md-field>
-      </div>
-
-      <div class="item" v-for="(item,key) in text" :key="key">{{item}}</div>
-
+      <md-menu v-for="(item,key) in text" :key="key">
+        <md-button md-menu-trigger>{{item}}</md-button>
+      </md-menu>
     </header>
+
     <header class="right">
-      <div class="ïtem">
-        <i class="material-icons">account_circle</i>
-        <span>Alexander</span>
-      </div>
-      <div class="ïtem">
-        <md-field>
-          <md-select v-model="lang" name="lang" id="lang" placeholder="Eng">
-            <md-option value="eng">Eng</md-option>
-            <md-option value="rus">Rus</md-option>
-            <md-option value="other">Other</md-option>
-          </md-select>
-        </md-field>
-      </div>
-      <div class="ïtem">
-      <i class="material-icons last">lock_open</i>
-      </div>
+      <md-menu>
+        <md-button md-menu-trigger>
+          <md-icon>account_circle</md-icon>Alexander
+        </md-button>
+      </md-menu>
+
+      <md-menu>
+        <md-button md-menu-trigger>Eng
+          <md-icon>keyboard_arrow_down</md-icon>
+        </md-button>
+        <md-menu-content>
+          <md-menu-item>Eng</md-menu-item>
+          <md-menu-item>Rus</md-menu-item>
+          <md-menu-item>Other</md-menu-item>
+        </md-menu-content>
+      </md-menu>
+
+      <i class="material-icons color">lock_open</i>
     </header>
-    <section>eee</section>
-    <main>eeeee</main>
+
+    <section>section</section>
+    <main>main</main>
   </div>
 </template>
 
@@ -54,7 +53,7 @@ export default {
     return {
       instruments: "",
       lang: "",
-      text: ["Widget", "View", "Administration"]
+      text: ["Widgets", "View", "Administration"]
     };
   }
 };
@@ -62,43 +61,52 @@ export default {
 
 <style scoped>
 .mycontent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 270px;
+  grid-template-rows: 45px 1fr;
+}
+i.color {
+  color: rgb(39, 187, 187);
+  margin: 0px 15px 0px 0px;
+}
+.md-menu {
   display: flex;
-  flex-wrap: wrap;
+  flex: 0 1 120px;
+  justify-content: center;
 }
-.md-field,
-.md-has-placeholder {
-  width: 120px;
-  min-height: 0px;
+i.md-icon {
+  margin: -3px 0px 0px -2px;
 }
-header.left{
-  flex: 3 1 50%;
+header.left {
+  grid-column: 1 / 3;
+  grid-row: 1/2;
   justify-content: flex-start;
 }
-header.right{
-  flex: 1 1 250px;
+header.right {
+  grid-column: 3 / 4;
+  grid-row: 1/2;
   justify-content: flex-end;
-}
-div.item {
-  display: flex;
-  flex: 0 1 150px;
-  border: 1px solid black;
-}
-section {
-  flex: 0 1 220px;
-  background-color: rgb(226, 231, 235);
-  height: calc(100% - 30px);
-}
-main {
-  flex: 1 0 0px;
-  background-color: rgb(226, 231, 235);
 }
 header {
   display: flex;
   background-color: rgb(255, 255, 255);
-  height: 45px;
-  padding: 0px 2px 0px 12px;
+  padding: 0px 2px 0px 0px;
   align-items: center;
-  border: 1px solid red;
+  overflow: hidden;
+}
+section {
+  grid-column: 1 / 2;
+  grid-row: 2/3;
+  background-color: rgb(226, 231, 235);
+}
+main {
+  grid-column: 2 / 4;
+  grid-row: 2/3;
+  background-color: rgb(226, 231, 235);
+}
+i {
+  margin: -2px 15px 0px 15px;
+  font-size: 1.8rem;
 }
 </style>
 
