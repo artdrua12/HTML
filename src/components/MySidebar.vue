@@ -32,7 +32,6 @@
 
 <script>
 export default {
-  name: "app",
   data() {
     return {
       text: "",
@@ -50,7 +49,7 @@ export default {
           this.amount = 0;
         }
         this.amount += 10;
-        console.log(":dd");
+        console.log("tick")
       }, 500);
     },
     stop() {

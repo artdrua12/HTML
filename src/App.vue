@@ -1,12 +1,13 @@
 <template>
   <div id="app">
     <my-sidebar class="sidebar"></my-sidebar>
-    <section class="content">ddd</section>
+    <my-content class="content"></my-content>
   </div>
 </template>
 
 <script>
 import MySidebar from "./components/MySidebar.vue"
+import MyContent from "./components/MyContent.vue"
 export default {
   name: "app",
   data() {
@@ -14,7 +15,8 @@ export default {
     };
   },
   components:{
-    MySidebar
+    MySidebar,
+    MyContent
   }
 };
 </script>
@@ -62,7 +64,6 @@ table {
 }
 .content {
   flex: 1 0 300px;
-  background-color: rgb(226, 223, 38);
 }
 </style>
 
