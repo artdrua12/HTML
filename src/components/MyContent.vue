@@ -2,7 +2,11 @@
 <template>
   <div class="mycontent">
     <header class="left">
-      <i class="material-icons">reorder</i>
+      <md-menu>
+        <md-button md-menu-trigger>
+          <md-icon>reorder</md-icon>
+        </md-button>
+      </md-menu>
 
       <md-menu>
         <md-button md-menu-trigger>instruments
@@ -38,24 +42,36 @@
         </md-menu-content>
       </md-menu>
 
-      <i class="material-icons color border">lock_open</i>
+      <md-menu class="border">
+        <md-button md-menu-trigger>
+          <md-icon class="color">lock_open</md-icon>
+        </md-button>
+      </md-menu>
     </header>
 
-    <section>section</section>
-    <main>main</main>
+    <section>
+      <default-comp  v-for="(item,key) in title"
+       :key="key" :title="item" :height="230"></default-comp>
+    </section>
+    <main>
+      <m-content-main></m-content-main>
+    </main>
   </div>
 </template>
 
 <script>
 import DefaultComp from "./DefaultComp.vue";
+import MContentMain from "./MContentMain.vue";
 export default {
   data() {
     return {
-      text: ["Widgets", "View", "Administration"]
+      text: ["Widgets", "View", "Administration"],
+      title:["Sampler", "Quat. Pump"]
     };
   },
   components: {
-    DefaultComp
+    DefaultComp,
+    MContentMain
   }
 };
 </script>
@@ -63,20 +79,18 @@ export default {
 <style scoped>
 .mycontent {
   display: grid;
-  grid-template-columns: repeat(2, 1fr) 270px;
+  grid-template-columns: 250px repeat(2, AUTO);
   grid-template-rows: 47px 1fr;
 }
-.border{
-  border-left: 1px solid gray
+.border {
+  border-left: 1px solid gray;
 }
 .md-menu {
   display: flex;
-  flex: 0 1 120px;
   justify-content: center;
 }
-i.color {
+i.md-icon.color {
   color: rgb(11, 207, 207);
-  padding:  0px 5px 0px 7px;
 }
 i.md-icon {
   margin: -3px 0px 0px -2px;
@@ -101,15 +115,16 @@ section {
   grid-column: 1 / 2;
   grid-row: 2/3;
   background-color: rgb(226, 231, 235);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
 }
 main {
   grid-column: 2 / 4;
   grid-row: 2/3;
   background-color: rgb(226, 231, 235);
-}
-i {
-  margin: -2px 15px 0px 15px;
-  font-size: 1.8rem;
+  padding: 12px;
+  border: 1px solid red;
 }
 </style>
 
