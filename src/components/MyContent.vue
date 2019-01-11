@@ -94,7 +94,7 @@ export default {
 .main {
   grid-column: 2 / 4;
   grid-row: 2/3;
-  background-color: rgb(226, 231, 235);
+  background-color: rgb(239, 241, 245);
   overflow: hidden;
   padding: 15px;
 }
@@ -127,7 +127,7 @@ header {
 section {
   grid-column: 1 / 2;
   grid-row: 2/3;
-  background-color: rgb(226, 231, 235);
+  background-color: rgb(228, 233, 236);
   padding: 15px;
   display: flex;
   flex-direction: column;

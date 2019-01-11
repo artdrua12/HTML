@@ -68,6 +68,7 @@ div.mysidebar {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, auto) 1fr repeat(2, auto);
+  border-right: 1px solid gray;
   overflow: hidden;
 }
 .search {
@@ -99,8 +100,8 @@ div.mysidebar {
 }
 header,
 footer {
-  padding: 10px 20px 9px 27px;
-  font-size: 1.5rem;
+  padding: 17px 0px 9px 5px;
+  font-size: 1.4rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
   letter-spacing: 3px;
