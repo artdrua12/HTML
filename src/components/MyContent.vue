@@ -50,6 +50,9 @@
     </header>
 
     <section>
+      <md-button class="md-icon-button md-raised">
+        <md-icon class="button">keyboard_arrow_left</md-icon>
+      </md-button>
       <default-comp
         v-for="(item,key) in main"
         :key="key"
@@ -93,7 +96,7 @@ export default {
   grid-row: 2/3;
   background-color: rgb(226, 231, 235);
   overflow: hidden;
-  padding: 12px;
+  padding: 15px;
 }
 .border {
   border-left: 1px solid gray;
@@ -104,9 +107,6 @@ export default {
 }
 i.md-icon.color {
   color: rgb(11, 207, 207);
-}
-i.md-icon {
-  margin: -3px 0px 0px -2px;
 }
 header.left {
   grid-column: 1 / 3;
@@ -128,9 +128,11 @@ section {
   grid-column: 1 / 2;
   grid-row: 2/3;
   background-color: rgb(226, 231, 235);
-  padding: 12px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
+  border-right: 1px solid gray;
+  box-shadow: -3px 0px 7px -1px #8d8a8a inset;
 }
 </style>
 

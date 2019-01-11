@@ -34,12 +34,11 @@ export default {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: 12px;
+  grid-gap: 15px;
 }
 .top {
   grid-column: 1 / 3;
   grid-row: 1/2;
-  border: 1px dotted blueviolet;
 }
 .left {
   grid-column: 1 / 2;

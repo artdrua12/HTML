@@ -1,6 +1,11 @@
 <template>
   <div class="headerContentMain">
-    <nav>n</nav>
+    <nav>
+      <md-tabs>
+        <md-tab v-for="(item,key) in navArray" :key="key" :md-label="item"></md-tab>
+      </md-tabs>
+    </nav>
+
     <section>s</section>
     <aside class="left">l</aside>
     <aside class="right">r</aside>
@@ -10,7 +15,16 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      navArray: [
+        "WORKLIST",
+        "RUN",
+        "TO DO: 23 injections",
+        "02:15:0",
+        "METHODS:Metod 1.amx (00:00/04:30)",
+        "SINGLE RUN"
+      ]
+    };
   }
 };
 </script>
@@ -19,7 +33,8 @@ export default {
 .headerContentMain {
   display: grid;
   grid-template-columns: 150px repeat(2, 1fr);
-  grid-template-rows: 35px 1fr;
+  grid-template-rows: auto 1fr;
+  border: 1px solid gray;
 }
 .left {
   grid-column: 2 / 3;
@@ -34,7 +49,6 @@ export default {
 nav {
   grid-column: 1 / 4;
   grid-row: 1/2;
-  background-color: rgb(228, 204, 188);
 }
 section {
   grid-column: 1 / 2;
