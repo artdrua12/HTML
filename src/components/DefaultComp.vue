@@ -1,9 +1,10 @@
 
 <template>
-  <div class="defaultComponent" :style="{'height': height + 'px'}">
+  <div class="defaultComponent" :style="{'height': height + '%'}">
     <header>
+      <div v-if="color" class="square" :style="{'background': color}"></div>
       <h1>{{title}}</h1></header>
-    <main>m</main>
+    <main></main>
   </div>
 </template>
 
@@ -15,7 +16,8 @@ export default {
     },
     height:{
       default:100
-    }
+    },
+    color:{}
   },
   data() {
     return {
@@ -26,6 +28,11 @@ export default {
 </script>
 
 <style scoped>
+.square {
+    width: 15px;
+    height: 15px;
+    margin-right: 7px;
+}
 .defaultComponent{
   width: 100%;
   height: 100%;

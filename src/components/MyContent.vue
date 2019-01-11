@@ -50,7 +50,13 @@
     </header>
 
     <section>
-      <default-comp v-for="(item,key) in title" :key="key" :title="item" :height="230"></default-comp>
+      <default-comp
+        v-for="(item,key) in main"
+        :key="key"
+        :title="item.title"
+        :color="item.color"
+        :height="item.height"
+      ></default-comp>
     </section>
     <m-content-main class="main"></m-content-main>
   </div>
@@ -63,7 +69,10 @@ export default {
   data() {
     return {
       text: ["Widgets", "View", "Administration"],
-      title: ["Sampler", "Quat. Pump"]
+      main: [
+        { title: "Sampler", color: "green", height: 25 },
+        { title: "Quat. Pump", color: "orange", height: 25 }
+      ]
     };
   },
   components: {
@@ -83,8 +92,7 @@ export default {
   grid-column: 2 / 4;
   grid-row: 2/3;
   background-color: rgb(226, 231, 235);
-  padding: 12px;
-  padding-right: 22px;
+  overflow: hidden;
 }
 .border {
   border-left: 1px solid gray;
