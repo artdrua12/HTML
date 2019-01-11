@@ -40,7 +40,7 @@ export default {
   flex-wrap: wrap;
   background-color: rgb(255, 255, 254);
   border: 1px solid gray;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 header,main{
   flex: 1 1 51%;

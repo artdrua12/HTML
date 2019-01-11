@@ -70,8 +70,8 @@ export default {
     return {
       text: ["Widgets", "View", "Administration"],
       main: [
-        { title: "Sampler", color: "green", height: 25 },
-        { title: "Quat. Pump", color: "orange", height: 25 }
+        { title: "Sampler", color: "green", height: 20 },
+        { title: "Quat. Pump", color: "orange", height: 20 }
       ]
     };
   },
@@ -85,7 +85,7 @@ export default {
 <style scoped>
 .mycontent {
   display: grid;
-  grid-template-columns: 250px repeat(2, AUTO);
+  grid-template-columns: 200px repeat(2, AUTO);
   grid-template-rows: 47px 1fr;
 }
 .main {
@@ -93,6 +93,7 @@ export default {
   grid-row: 2/3;
   background-color: rgb(226, 231, 235);
   overflow: hidden;
+  padding: 12px;
 }
 .border {
   border-left: 1px solid gray;
