@@ -1,8 +1,10 @@
 
 <template>
   <div class="mContentMain">
-    <header-content-main class="top"></header-content-main>
-    <default-comp class="left" title="LIVE CHART"></default-comp>
+    <header-content-main class="header"></header-content-main>
+    <default-comp class="left" title="LIVE CHART">
+      <img src="../assets/chart.png" alt="chart">
+    </default-comp>
     <default-comp class="right" title="SPECTRA"></default-comp>
   </div>
 </template>
@@ -36,7 +38,7 @@ export default {
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 15px;
 }
-.top {
+.header{
   grid-column: 1 / 3;
   grid-row: 1/2;
 }

@@ -4,7 +4,9 @@
     <header>
       <div v-if="color" class="square" :style="{'background': color}"></div>
       <h1>{{title}}</h1></header>
-    <main></main>
+    <main>
+      <slot></slot>
+    </main>
   </div>
 </template>
 

@@ -59,7 +59,7 @@
         :title="item.title"
         :color="item.color"
         :height="item.height"
-      ></default-comp>
+      > <h1>slot</h1> </default-comp>
     </section>
     <m-content-main class="main"></m-content-main>
   </div>
