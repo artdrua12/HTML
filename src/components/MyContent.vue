@@ -105,6 +105,10 @@ export default {
   display: flex;
   justify-content: center;
 }
+button.md-icon-button{
+top: 70px;
+left: 155px;
+}
 i.md-icon.color {
   color: rgb(11, 207, 207);
 }

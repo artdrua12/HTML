@@ -18,11 +18,11 @@
     <footer>
       <div class="butLeft">
         <i class="material-icons">add_circle_outline</i>
-        <span>ddd</span>
+        <span>New</span>
       </div>
       <div class="butLeft">
         <i class="material-icons">adjust</i>
-        <span>ddd</span>
+        <span>Open</span>
       </div>
       <md-button class="clear md-primary butRight">Cansel</md-button>
       <md-button class="md-raised md-primary butRight">Save as</md-button>
@@ -72,7 +72,7 @@ export default {
 }
 .butRight {
   float: right;
-    border-radius: 20px;
+  border-radius: 20px;
   width: 85px;
   height: 30px;
 }
@@ -82,21 +82,24 @@ export default {
   background-color: rgb(239, 241, 245);
 }
 div.butLeft {
-  display: inline;
+  display: inline-flex;
+  flex-direction: column;
   color: gray;
-  border: 1px solid red;
-  height: 100%;
+  align-items: center;
+  margin-left: 10px;
+  padding-top: 2px;
 }
 nav {
   grid-column: 1 / 4;
   grid-row: 1/2;
 }
+span{
+  font-size: 0.8rem;
+}
 footer {
   grid-column: 1 / 4;
   grid-row: 3/4;
-  height: 44px;
   background-color: rgb(255, 255, 254);
   border-top: 1px solid gray;
 }
-
 </style>
