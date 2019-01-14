@@ -35,7 +35,7 @@ export default {
 .mContentMain {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 1fr 49%;
   grid-gap: 15px;
 }
 .header{
@@ -45,10 +45,12 @@ export default {
 .left {
   grid-column: 1 / 2;
   grid-row: 2/3;
+  overflow: hidden;
 }
 .right {
   grid-column: 2 / 3;
   grid-row: 2/3;
+  overflow: hidden;
 }
 </style>
 

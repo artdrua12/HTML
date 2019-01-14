@@ -3,7 +3,8 @@
   <div class="defaultComponent" :style="{'height': height + '%'}">
     <header>
       <div v-if="color" class="square" :style="{'background': color}"></div>
-      <h1>{{title}}</h1></header>
+      <h1>{{title}}</h1>
+    </header>
     <main>
       <slot></slot>
     </main>
@@ -12,30 +13,23 @@
 
 <script>
 export default {
-  props:{
-    title:{
-      default:"default value"
+  props: {
+    title: {
+      default: "default value"
     },
-    height:{
-      default:100
+    height: {
+      default: 100
     },
-    color:{}
+    color: {}
   },
   data() {
-    return {
-     
-    };
+    return {};
   }
 };
 </script>
 
 <style scoped>
-.square {
-    width: 15px;
-    height: 15px;
-    margin-right: 7px;
-}
-.defaultComponent{
+.defaultComponent {
   width: 100%;
   height: 100%;
   display: flex;
@@ -44,12 +38,18 @@ export default {
   border: 1px solid gray;
   margin-bottom: 20px;
 }
-header,main{
+.square {
+  width: 15px;
+  height: 15px;
+  margin-right: 7px;
+}
+header,
+main {
   flex: 1 1 51%;
   display: flex;
   align-items: center;
 }
-header{
+header {
   border-bottom: 1px solid gray;
   height: 30px;
   padding-left: 10px;

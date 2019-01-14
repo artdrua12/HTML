@@ -13,16 +13,12 @@
       </template>
     </md-list>
 
-    <aside class="left">l</aside>
-    <aside class="right">r</aside>
+    <aside class="left"></aside>
+    <h-cont-main-right class="right"></h-cont-main-right>
     <footer>
-      <div class="butLeft">
-        <i class="material-icons">add_circle_outline</i>
-        <span>New</span>
-      </div>
-      <div class="butLeft">
-        <i class="material-icons">adjust</i>
-        <span>Open</span>
+      <div class="butLeft" v-for="(item, key) in footer" :key="key">
+        <i class="material-icons">{{item.icon}}</i>
+        <span>{{item.span}}</span>
       </div>
       <md-button class="clear md-primary butRight">Cansel</md-button>
       <md-button class="md-raised md-primary butRight">Save as</md-button>
@@ -32,6 +28,7 @@
 </template>
 
 <script>
+import HContMainRight from "./HContMainRight.vue";
 export default {
   data() {
     return {
@@ -43,8 +40,15 @@ export default {
         "METHODS:Metod 1.amx (00:00/04:30)",
         "SINGLE RUN"
       ],
-      vertiralNav: ["ALS", "Inlets", "Columns"]
+      vertiralNav: ["ALS", "Inlets", "Columns"],
+      footer: [
+        { icon: "add_circle_outline", span: "New" },
+        { icon: "adjust", span: "Open" }
+      ]
     };
+  },
+  components: {
+    HContMainRight
   }
 };
 </script>
@@ -52,7 +56,7 @@ export default {
 <style scoped>
 .headerContentMain {
   display: grid;
-  grid-template-columns: 150px repeat(2, 1fr);
+  grid-template-columns: 140px repeat(2, 1fr);
   grid-template-rows: auto 1fr auto;
   border: 1px solid gray;
   overflow: hidden;
@@ -65,7 +69,7 @@ export default {
 .right {
   grid-column: 3 / 4;
   grid-row: 2/3;
-  background-color: rgb(113, 160, 160);
+  overflow: hidden;
 }
 .clear {
   border: 1px solid blue;
@@ -86,19 +90,21 @@ div.butLeft {
   flex-direction: column;
   color: gray;
   align-items: center;
-  margin-left: 10px;
-  padding-top: 2px;
+  margin-left: 20px;
+  margin-top: 3px;
 }
 nav {
   grid-column: 1 / 4;
   grid-row: 1/2;
+  border-bottom: 1px solid gray;
 }
-span{
+span {
   font-size: 0.8rem;
 }
 footer {
   grid-column: 1 / 4;
   grid-row: 3/4;
+  padding: 3px 0px;
   background-color: rgb(255, 255, 254);
   border-top: 1px solid gray;
 }
