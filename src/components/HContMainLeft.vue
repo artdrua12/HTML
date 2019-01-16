@@ -88,6 +88,9 @@ export default {
   margin: 10px 0px;
   overflow: hidden;
 }
+.md-checkbox{
+  margin: 0px;
+}
 .flex {
   display: flex;
   height: 20px;

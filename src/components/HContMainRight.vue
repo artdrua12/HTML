@@ -2,13 +2,10 @@
   <div class="HContMainRight">
     <my-fieldset class="title" title="Pleasure/Flow_Setting"></my-fieldset>
     <div class="radioButt">
-      <md-radio
-        v-for="(item,key) in radioArray"
-        :key="key"
-        v-model="radio"
-        :value="item"
-        class="md-primary"
-      >{{item}}</md-radio>
+      <template v-for="(item,key) in radioArray">
+        <input :key="key" :id="item" type="radio" name="gender" :value="item">
+        <label :key="key" :for="item">{{item}}</label>
+      </template>
     </div>
 
     <table>
@@ -83,6 +80,7 @@ export default {
 </script>
 
 <style scoped>
+
 .HContMainRight {
   display: flex;
   flex-direction: column;
@@ -90,42 +88,36 @@ export default {
   border-left: 1px solid gray;
 }
 .title {
-  padding: 0px 12px;
+  padding: 12px;
 }
-.radioButt {
-  display: flex;
-  justify-content: center;
-  font-size: 12px;
-  width: 80%;
-}
-.center {
-  text-align: center;
-}
+
 .md-radio {
   margin: 0px;
 }
-div.table {
-  width: 100%;
-  overflow: auto;
-  font-size: 14px;
+
+div.radioButt {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  padding: 7px 0px;
 }
+
 table {
   width: 100%; /* Ширина таблицы */
   border-collapse: collapse; /* Отображать только одинарные линии */
   text-align: right;
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 13px;
 }
 th {
   background-color: #448aff;
   color: white;
   text-align: center;
   padding: 7px 2px;
-  font-size: 13px;
   vertical-align: middle;
 }
 td {
-  border: 2px solid rgb(173, 167, 167);
+  border: 1px solid rgb(173, 167, 167);
   padding: 5px 10px 0px 10px;
   height: 30px;
   vertical-align: middle;
@@ -137,5 +129,40 @@ td:first-child {
 
 td:last-child {
   border-right: none;
+}
+tr:hover {
+  background-color: #c6d5f0;
+}
+label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 20px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+input[type="radio"] {
+  display: none;
+}
+label:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  border: 1px solid gray;
+}
+label:before {
+  border-radius: 10px;
+}
+input[type="radio"]:checked + label:before {
+  content: "\2022";
+  color: #f3f3f3;
+  font-size: 30px;
+  text-align: center;
+  line-height: 17px;
+  background-color: #448aff;
 }
 </style>

@@ -35,7 +35,7 @@ export default {
 .mContentMain {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: 1fr 49%;
+  grid-template-rows: 1fr 47%;
   grid-gap: 15px;
 }
 .header{
