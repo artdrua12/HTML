@@ -111,7 +111,11 @@ export default {
 }
 button.md-icon-button {
   top: -320px;
-  left: 155px;
+  left: 167px;
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  margin: 0;
 }
 i.md-icon.color {
   color: rgb(11, 207, 207);
