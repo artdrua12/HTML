@@ -63,7 +63,6 @@
       <md-button class="md-icon-button md-raised">
         <md-icon class="button">keyboard_arrow_left</md-icon>
       </md-button>
-
     </section>
     <m-content-main class="main"></m-content-main>
   </div>
@@ -111,11 +110,12 @@ export default {
 }
 button.md-icon-button {
   top: -320px;
-  left: 167px;
+  left: 168px;
   width: 30px;
   min-width: 30px;
   height: 30px;
   margin: 0;
+  padding: 1px 2px 0px 0px;
 }
 i.md-icon.color {
   color: rgb(11, 207, 207);
