@@ -4,7 +4,7 @@
     <div class="radioButt">
       <template v-for="(item,key) in radioArray">
         <input :key="key" :id="item" type="radio" name="gender" :value="item">
-        <label :key="key" :for="item">{{item}}</label>
+        <label :key="key+100" :for="item">{{item}}</label>
       </template>
     </div>
 
@@ -24,6 +24,11 @@
         <td>{{item.Run_Time}}</td>
       </tr>
     </table>
+    <div class="somethingIcon">
+      <md-button class="md-icon-button md-raised md-primary">
+        <md-icon class="button">show_chart</md-icon>
+      </md-button>
+    </div>
   </div>
 </template>
 
@@ -80,7 +85,6 @@ export default {
 </script>
 
 <style scoped>
-
 .HContMainRight {
   display: flex;
   flex-direction: column;
@@ -90,9 +94,22 @@ export default {
 .title {
   padding: 12px;
 }
-
+.somethingIcon {
+  color: white;
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
 .md-radio {
   margin: 0px;
+}
+.md-icon-button {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  margin: 0;
 }
 
 div.radioButt {
@@ -100,6 +117,7 @@ div.radioButt {
   justify-content: center;
   align-items: center;
   font-size: 12px;
+  margin: 5px 0px;
 }
 
 table {
@@ -131,7 +149,7 @@ td:last-child {
   border-right: none;
 }
 tr:hover {
-  background-color: #c6d5f0;
+  background-color: rgba(132, 181, 214, 0.17)
 }
 label {
   display: inline-block;
