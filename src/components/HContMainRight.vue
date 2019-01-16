@@ -98,8 +98,8 @@ export default {
 div.radioButt {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 12px;
-  padding: 7px 0px;
 }
 
 table {
@@ -151,7 +151,6 @@ label:before {
   height: 16px;
   position: absolute;
   left: 0;
-  bottom: 1px;
   border: 1px solid gray;
 }
 label:before {

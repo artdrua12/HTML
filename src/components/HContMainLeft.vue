@@ -14,7 +14,7 @@
     </div>
     <div class="center">
       <my-fieldset class="title" title="Control_mode"></my-fieldset>
-      <md-checkbox v-model="checkbox" class="md-primary">Ok</md-checkbox>
+      <md-checkbox v-model="checkbox" class="md-primary intoMargin">Ok</md-checkbox>
       <div class="flex" v-for="(item,key) in inputArrayCenter" :key="key">
         <p class="half">{{item.title}}</p>
         <input :value="item.value" class="quarter">
@@ -64,17 +64,18 @@ export default {
 .top {
   font-size: 0.8rem;
   overflow: hidden;
-  max-height: 74px;
+  display: flex;
+  justify-content: space-around;
 }
 .text {
   border: 1px solid black;
-  padding: 5px;
+  padding: 7px;
   float: right;
+  margin-right: 15px;
 }
 .img {
   display: inline-block;
   width: 50%;
-  margin: auto;
 }
 .title {
   grid-column: 1 / 3;
@@ -85,16 +86,17 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(47%, 1fr));
   grid-template-rows: auto;
   font-size: 0.8rem;
-  margin: 10px 0px;
+  margin: 8px 0px;
   overflow: hidden;
 }
 .md-checkbox{
-  margin: 0px;
+  margin: 0px 0px 7px 15px;
 }
 .flex {
   display: flex;
   height: 20px;
-  margin-top: 10px;
+  margin: 10px 0px 0px 15px;
+  align-items: center
 }
 .half {
   flex: 1 1 40%;
@@ -111,6 +113,7 @@ export default {
 .footer {
   width: 50%;
   font-size: 0.8rem;
+  margin-top: 7px;
 }
 input {
   width: 60px;
