@@ -8,7 +8,7 @@
 
     <md-list class="section">
       <template v-for="(item,key) in vertiralNav">
-        <md-list-item :key="key">{{item}}</md-list-item>
+        <md-list-item :class="{cheked: item=='Columns' }" :key="key">{{item}}</md-list-item>
         <md-divider :key="key+100"></md-divider>
       </template>
     </md-list>
@@ -86,6 +86,9 @@ export default {
   grid-column: 1 / 2;
   grid-row: 2/3;
   background-color: rgb(239, 241, 245);
+}
+.cheked {
+  background-color:  rgb(255, 255, 254);
 }
 div.butLeft {
   display: inline-flex;

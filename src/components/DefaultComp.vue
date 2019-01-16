@@ -49,6 +49,9 @@ main {
   display: flex;
   align-items: center;
 }
+main {
+  justify-content: space-around;
+}
 header {
   border-bottom: 1px solid gray;
   height: 30px;

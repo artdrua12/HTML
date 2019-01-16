@@ -2,6 +2,7 @@
 <template>
   <div class="mysidebar">
     <header>LIMS</header>
+
     <article class="search">
       <md-field>
         <label>Search</label>
@@ -9,9 +10,11 @@
         <md-icon>search</md-icon>
       </md-field>
     </article>
+
     <article class="animation">
       <md-progress-bar class="md-accent" md-mode="determinate" :md-value="amount"></md-progress-bar>
     </article>
+
     <footer>
       <span>RUN</span>
       <md-button
@@ -49,7 +52,7 @@ export default {
           this.amount = 0;
         }
         this.amount += 10;
-        console.log("tick")
+        console.log("tick");
       }, 500);
     },
     stop() {
@@ -93,14 +96,17 @@ div.mysidebar {
   border: 3px solid rgb(238, 245, 238);
 }
 .on {
-  border-top: 7px solid rgb(23, 228, 23);
+  border-top: 4px solid rgb(23, 228, 23);
 }
 .off {
-  border-top: 7px solid rgb(247, 201, 76);
+  border-top: 4px solid rgb(247, 201, 76);
+}
+.md-input {
+  margin-left: 10px;
 }
 header,
 footer {
-  padding: 17px 0px 9px 5px;
+  padding: 14px 0px 8px 5px;
   font-size: 1.4rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
@@ -111,6 +117,7 @@ header {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   background-color: rgb(39, 39, 51);
+  padding-left: 30px;
 }
 footer {
   grid-column: 1 / 2;
@@ -126,7 +133,6 @@ label {
   top: 15px;
   font-size: 1.1rem;
 }
-
 span {
   margin-right: 100px;
 }

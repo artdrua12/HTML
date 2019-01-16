@@ -57,13 +57,15 @@
         :color="item.color"
         :height="item.height"
       >
-        <h1>slot</h1>
+        <img width="50%" src="../assets/sampler-icon.svg" alt="picture">
+        <img width="30%" src="../assets/bottle_filling_sprite.svg" alt="picture">
       </default-comp>
 
       <md-button class="md-icon-button md-raised">
         <md-icon class="button">keyboard_arrow_left</md-icon>
       </md-button>
     </section>
+    
     <m-content-main class="main"></m-content-main>
   </div>
 </template>

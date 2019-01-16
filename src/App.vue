@@ -60,11 +60,12 @@ table {
   display: flex;
 }
 .sidebar {
-  flex: 0 0 270px;
+  flex: 0 1 270px;
 }
 .content {
   flex: 1 0 300px;
 }
+
 </style>
 
 
