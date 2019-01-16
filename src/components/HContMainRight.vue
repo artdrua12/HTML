@@ -1,6 +1,6 @@
 <template>
   <div class="HContMainRight">
-    <my-fieldset  class="title" title="Pleasure/Flow_Setting"></my-fieldset>
+    <my-fieldset class="title" title="Pleasure/Flow_Setting"></my-fieldset>
     <div class="radioButt">
       <md-radio
         v-for="(item,key) in radioArray"
@@ -11,29 +11,33 @@
       >{{item}}</md-radio>
     </div>
     <div class="table">
-      <md-table v-model="people" >
+      <!-- <tr>
+        <th></th>
+        <th v-for="(item,key) in tableTitle" :key="key">{{item}}</th>
+      </tr>
+      <tr v-for="(item,key) in tableData" :key="key">
+        <td><md-radio v-if="item.Rate" v-model="radio2" :value="item.Ramp" class="md-primary"></md-radio></td>
+        <td>{{item.Ramp}}</td>
+        <td>{{item.Rate}}</td>
+        <td>{{item.Value}}</td>
+        <td>{{item.Hold}}</td>
+        <td>{{item.Run_Time}}</td>
+      </tr>-->
+      <md-table md-card>
+        <md-table-row>
+          <md-table-head></md-table-head>
+          <md-table-head v-for="(item,key) in tableTitle" :key="key">{{item}}</md-table-head>
+        </md-table-row>
 
-        <md-table-toolbar slot="md-table-alternate-header" slot-scope="{ count }">
-          <div class="md-toolbar-section-start">{{ getAlternateLabel(count) }}</div>
-
-          <div class="md-toolbar-section-end">
-            <md-button class="md-icon-button">
-              <md-icon>delete</md-icon>
-            </md-button>
-          </div>
-        </md-table-toolbar>
-
-        <md-table-row
-          slot="md-table-row"
-          slot-scope="{ item }"
-          :md-disabled="item.name.includes('Stave')"
-          md-selectable="multiple"
-          md-auto-select
-        >
-          <md-table-cell md-label="Name" md-sort-by="name">{{ item.name }}</md-table-cell>
-          <md-table-cell md-label="Email" md-sort-by="email">{{ item.email }}</md-table-cell>
-          <md-table-cell md-label="Gender" md-sort-by="gender">{{ item.gender }}</md-table-cell>
-          <md-table-cell md-label="Job Title" md-sort-by="title">{{ item.title }}</md-table-cell>
+        <md-table-row v-for="(item,key) in tableData" :key="key">
+          <md-table-cell>
+            <md-radio v-if="item.Rate" v-model="radio2" :value="item.Ramp" class="md-primary"></md-radio>
+          </md-table-cell>
+          <md-table-cell>{{item.Ramp}}</md-table-cell>
+          <md-table-cell>{{item.Rate}}</md-table-cell>
+          <md-table-cell>{{item.Value}}</md-table-cell>
+          <md-table-cell>{{item.Hold}}</md-table-cell>
+          <md-table-cell>{{item.Hold}}</md-table-cell>
         </md-table-row>
       </md-table>
     </div>
@@ -46,6 +50,7 @@ export default {
   data() {
     return {
       radio: null,
+      radio2: null,
       radioArray: [
         "Constant Preassure",
         "Rampted Preasure",
@@ -53,24 +58,34 @@ export default {
         "Ramped Flow"
       ],
       selected: [],
-      people: [
+      tableTitle: [
+        `Ramp##`,
+        `Rate,mL/min per min`,
+        `Value, mL/min`,
+        `Hot Time,min`,
+        `Run Time.min`
+      ],
+      tableData: [
         {
-          name: "Shawna Dubbin",
-          email: "sdubbin0@geocities.com",
-          gender: "Male",
-          title: "Assistant Media Planner"
+          Ramp: "(initial)",
+          Rate: null,
+          Value: 16.849,
+          Hold: null,
+          Run_Time: null
         },
         {
-          name: "Odette Demageard",
-          email: "odemageard1@spotify.com",
-          gender: "Female",
-          title: "Account Coordinator"
+          Ramp: "Ramp1",
+          Rate: 10,
+          Value: 16.849,
+          Hold: 0,
+          Run_Time: 0
         },
         {
-          name: "Lonnie Izkovitz",
-          email: "lizkovitz3@youtu.be",
-          gender: "Female",
-          title: "Operator"
+          Ramp: "Ramp2",
+          Rate: 10,
+          Value: 16.849,
+          Hold: 0,
+          Run_Time: 0
         }
       ]
     };
@@ -88,18 +103,33 @@ export default {
   background-color: rgb(255, 255, 254);
   border-left: 1px solid gray;
 }
-.title{
-    margin: 12px 12px 2px 12px
+.title {
+  padding: 10px;
+  width: 100%;
 }
 .radioButt {
   display: flex;
-  justify-content:center;
-  font-size: 9px;
+  justify-content: center;
+  font-size: 12px;
+  width: 80%;
 }
-.table{
-    overflow: auto;
-    font-size: 9px;
+div.table {
+  overflow: auto;
+  font-size: 14px;
 }
-
-
+table {
+  width: 100%; /* Ширина таблицы */
+  border: 4px double black; /* Рамка вокруг таблицы */
+  border-collapse: collapse; /* Отображать только одинарные линии */
+}
+th,
+td {
+  border: 1px solid gray;
+  height: 10px;
+  width: 
+}
+th {
+  background-color: #448aff;
+  color: white;
+}
 </style>

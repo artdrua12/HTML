@@ -13,7 +13,7 @@
       </template>
     </md-list>
 
-    <aside class="left"></aside>
+    <h-cont-main-left class="left"></h-cont-main-left>
     <h-cont-main-right class="right"></h-cont-main-right>
     <footer>
       <div class="butLeft" v-for="(item, key) in footer" :key="key">
@@ -29,6 +29,7 @@
 
 <script>
 import HContMainRight from "./HContMainRight.vue";
+import HContMainLeft from "./HContMainLeft.vue";
 export default {
   data() {
     return {
@@ -48,7 +49,8 @@ export default {
     };
   },
   components: {
-    HContMainRight
+    HContMainRight,
+    HContMainLeft
   }
 };
 </script>
@@ -57,7 +59,7 @@ export default {
 .headerContentMain {
   display: grid;
   grid-template-columns: 140px repeat(2, 1fr);
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr 50px;
   border: 1px solid gray;
   overflow: hidden;
 }

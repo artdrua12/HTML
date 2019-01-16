@@ -50,16 +50,20 @@
     </header>
 
     <section>
-      <md-button class="md-icon-button md-raised">
-        <md-icon class="button">keyboard_arrow_left</md-icon>
-      </md-button>
       <default-comp
         v-for="(item,key) in main"
         :key="key"
         :title="item.title"
         :color="item.color"
         :height="item.height"
-      > <h1>slot</h1> </default-comp>
+      >
+        <h1>slot</h1>
+      </default-comp>
+
+      <md-button class="md-icon-button md-raised">
+        <md-icon class="button">keyboard_arrow_left</md-icon>
+      </md-button>
+
     </section>
     <m-content-main class="main"></m-content-main>
   </div>
@@ -105,9 +109,9 @@ export default {
   display: flex;
   justify-content: center;
 }
-button.md-icon-button{
-top: 70px;
-left: 155px;
+button.md-icon-button {
+  top: -320px;
+  left: 155px;
 }
 i.md-icon.color {
   color: rgb(11, 207, 207);
@@ -132,7 +136,7 @@ section {
   grid-column: 1 / 2;
   grid-row: 2/3;
   background-color: rgb(228, 233, 236);
-  padding: 15px;
+  padding: 20px 15px 0px 15px;
   display: flex;
   flex-direction: column;
   border-right: 1px solid gray;
